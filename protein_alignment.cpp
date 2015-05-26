@@ -59,10 +59,10 @@ const int open_penalty = -2;
 
 float max(float a, float b, float c)
 {
-	float temp;
-	temp = (a>b)?a:b;
-	temp = (temp>c)?temp:c;
-	return temp;
+    float temp;
+    temp = (a>b)?a:b;
+    temp = (temp>c)?temp:c;
+    return temp;
 }
 
 float value(int a, int b)
@@ -79,40 +79,40 @@ float value(int a, int b)
 
 int main(int argc, char* argv[])
 {
-	int ai, bi, i, j;
-	float r1, r2, r3, res, temp;
+    int ai, bi, i, j;
+    float r1, r2, r3, res, temp;
     int old_dir = 0;
     int kazna;
     char file_name[60] = "";
     int max_length, min_length;
 
-	FILE* input;
+    FILE* input;
     FILE* output;	
 
-	ai = 1;
+    ai = 1;
 	
-	input = fopen(argv[1], "r");
+    input = fopen(argv[1], "r");
 
-	while(!feof(input))	{
-	   if (!feof(input)){
-	     fscanf(input, "%c", &a[ai]);
-	     ai++;
-	   }
-	}
-	fclose(input);
+    while(!feof(input))	{
+      if (!feof(input)){
+        fscanf(input, "%c", &a[ai]);
+        ai++;
+      }
+    }
+    fclose(input);
 
-	bi = 1;
-	input = fopen(argv[2], "r");
+    bi = 1;
+    input = fopen(argv[2], "r");
 
-	while(!feof(input))	{
-	   if (!feof(input)) {
-	     fscanf(input, "%c", &b[bi]);
-	     bi++;
-	   }
-	}
-	fclose(input);
-	ai--;
-	bi--;
+    while(!feof(input))	{
+      if (!feof(input)) {
+        fscanf(input, "%c", &b[bi]);
+        bi++;
+      }
+    }
+    fclose(input);
+    ai--;
+    bi--;
 
     max_length = __max( ai, bi );
     min_length = __min( ai, bi );
@@ -129,9 +129,9 @@ int main(int argc, char* argv[])
 
     
 
-	for(i=0; i<ai; i++)
-		for(j=0; j<bi; j++)
-			mat[i][j] = 0;
+    for(i=0; i<ai; i++)
+       for(j=0; j<bi; j++)
+         mat[i][j] = 0;
 
     mat[0][1] = open_penalty;
     for (i=2; i<bi; i++)
