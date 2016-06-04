@@ -55,7 +55,7 @@ static double mdm[26][26] = {
 
 
 const int penalty      = -2;
-const int open_penalty = -2;
+const int open_penalty = -3;
 
 float max(float a, float b, float c)
 {
@@ -181,8 +181,8 @@ int main(int argc, char* argv[])
 
 
 
-    i = ai - 2;
-    j = bi - 2;
+    i = ai;
+    j = bi;
     int k = 1;
     std::vector<char> first_sequence;
     std::vector<char> second_sequence;
@@ -190,6 +190,14 @@ int main(int argc, char* argv[])
     do
     {
         switch(dir_mat[i][j]) {
+        	
+            case 0:    //printf("%4d : %c  %c\n", k, a[i], b[j]);
+                first_sequence.push_back(a[i]);
+                second_sequence.push_back(b[j]);
+                i--;
+                j--;
+                k++;
+                break;
             case 1:    //printf("%4d : %c  %c\n", k, a[i], b[j]);
                 first_sequence.push_back(a[i]);
                 second_sequence.push_back(b[j]);
